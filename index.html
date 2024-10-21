@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <title>lastday倒计时</title>
+    <title>倒计时</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,16 +12,50 @@
         #countdown {
             font-size: 2em;
         }
+        #ly{
+            font-size: 1.1rem;
+            line-height:1.8rem;
+        }
+        #malou{
+            font-size: 2rem;
+        }
+        #con{
+            width: 12rem;
+            height: auto;
+        }
     </style>
 </head>
 <body>
     <!-- <h1>Last Day</h1> -->
-    <h1>Last Day</h1>
+    <h1 id="title">Last Day</h1>
+    <h2 id="malou">这位马喽已重回天父的怀抱</h2>
     <div id="countdown"></div>
+    <div id="ly">
+        <br/>
+        这里边，高枕地膝，是一位青年，<br/>
+        在职从不曾受知于“加薪”和“升职”；<br/>
+        “工作”可没轻视他出身的微贱， <br/>
+        “加班”把他标出来认作宠幸。<br/>
+        他生性真挚，最乐于为公司卖命，<br/>
+        上苍也给了他同样慷慨的报酬：<br/>
+        他给了“坎坷”全部的所有，一个马喽；<br/>
+        从上苍全得了所求，几位朋友。<br/>
+        别再想法子表彰他的功绩，<br/>
+        也别再把他“没做完的需求”翻出了暗窖<br/> 
+        （它们同样再颤抖的希望中休息），<br/>
+        那就是他的天父和上帝的怀抱。<br/>
+        <br/>
+    </div>
+    <div id="ps">PS:是离职不是死了！想要找到我↓↓↓扫码
+        <br/>
+    </div>
+    <div>
+        <img id="con" src="con.jpg" alt="">
+    </div>
 
     <script>
         // 设置目标时间（年，月，日，小时，分钟，秒）
-        const countdownDate = new Date('2024-10-31T18:00:00').getTime();
+        const countdownDate = new Date('2024-10-25T15:00:00').getTime();
 
         // 更新倒计时的函数
         function updateCountdown() {
@@ -42,7 +76,10 @@
             // 如果倒计时结束，显示一条消息
             if (distance < 0) {
                 clearInterval(x);
-                document.getElementById('countdown').innerHTML = "已经到达目标时间！";
+                document.getElementById('title').remove();
+                document.getElementById('countdown').remove();
+            }else{
+                document.getElementById('malou').remove();
             }
         }
 
